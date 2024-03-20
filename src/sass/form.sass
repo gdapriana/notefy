@@ -1,0 +1,62 @@
+@use "variables" as var
+
+#form
+  width: 100%
+  display: flex
+  flex-direction: column
+  justify-content: start
+  gap: 16px
+  align-items: stretch
+
+  header
+    width: 100%
+    justify-content: center
+    align-items: center
+    display: flex
+    font-weight: bold
+    color: var.$black
+    font-size: 1.4rem
+
+  label
+    display: flex
+    gap: 8px
+    flex-direction: column
+    justify-content: stretch
+    align-items: stretch
+    @media (min-width: 768px)
+      width: 350px
+
+    span
+      color: var.$gray
+
+    input
+      padding: 12px
+      border: none
+      background-color: var.$indigo50
+      border-radius: 10px
+      &:focus
+        border: none
+        outline: none
+
+    input.invalid
+      border: 2px solid var.$rose500
+
+    textarea
+      padding: 12px
+      border: none
+      background-color: var.$indigo50
+      border-radius: 10px
+
+    .validation-message
+      color: var.$rose500
+
+  button
+    margin-top: 20px
+    border: none
+    background-color: var.$indigo500
+    color: var.$white
+    padding: 16px
+    border-radius: 10px
+    &:hover
+      background-color: var.$indigo400
+      cursor: pointer

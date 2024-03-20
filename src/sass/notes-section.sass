@@ -1,0 +1,86 @@
+@use "variables" as var
+
+#notes-section
+  display: flex
+  flex-direction: column
+  justify-content: start
+  align-items: stretch
+
+  #unarchive-notes-section
+    border-bottom: 2px solid var.$border
+
+  #unarchive-notes-section, #archive-notes-section
+    padding: 40px
+    gap: 20px
+    display: flex
+    flex-direction: column
+    justify-content: start
+    align-items: stretch
+
+    .notes-section-header
+      h2
+        color: var.$indigo500
+      p
+        color: var.$gray
+
+    #archive-notes, #unarchive-notes
+      display: grid
+      gap: 12px
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))
+
+      .note
+        border-radius: 15px
+        padding: 16px
+        display: flex
+        flex-direction: column
+        justify-content: start
+        align-items: stretch
+
+
+        .note-created
+          color: var.$gray
+          font-size: .9rem
+
+        .note-body
+          color: var.$black
+          flex-grow: 1
+          flex-basis: 0
+          height: auto
+          margin-top: 8px
+
+        .note-action-btn
+          display: flex
+          flex-wrap: wrap
+          justify-content: end
+          align-items: center
+          margin-top: 20px
+          gap: 8px
+
+          .note-delete-btn, .note-archive-btn, .note-unarchive-btn
+            border: none
+            padding: 8px 12px
+            color: var.$white
+            border-radius: 5px
+            cursor: pointer
+            &:hover
+              opacity: 70%
+
+          .note-delete-btn
+            background-color: var.$rose500
+
+          .note-archive-btn, .note-unarchive-btn
+            background-color: var.$indigo500
+
+    #unarchive-notes .note
+      background-color: var.$indigo100
+      border: 2px solid var.$indigo200
+      .note-title
+        color: var.$indigo500
+        font-weight: 500
+
+    #archive-notes .note
+      background-color: var.$rose100
+      border: 2px solid var.$rose200
+      .note-title
+        color: var.$rose500
+        font-weight: 500

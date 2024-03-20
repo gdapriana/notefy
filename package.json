@@ -1,8 +1,16 @@
 {
-  "script": {
-    "prettier": "prettier . --write"
+  "scripts": {
+    "prettier": "prettier --w .",
+    "sass": "sass --watch src/sass:src/styles"
   },
   "devDependencies": {
-    "prettier": "^3.2.5"
-  }
+    "prettier": "^3.2.5",
+    "sass": "^1.72.0"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2",
+    "moment": "2.24",
+    "typescript": "^5.4.2"
+  },
+  "type": "module"
 }
