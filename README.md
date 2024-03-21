@@ -1,7 +1,7 @@
 ## Submission: Membangun Notes App
 
-![example](assets/example.png)
-![start](assets/stars.png)
+![example](src/assets/example.png)
+![start](src/assets/stars.png)
 
 | Field | Information |
 |---|---|
