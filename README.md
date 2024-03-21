@@ -1,7 +1,7 @@
 ## Submission: Membangun Notes App
 
 ![example](src/assets/example.png)
-![start](src/assets/stars.png)
+
 
 | Field | Information |
 |---|---|
@@ -11,6 +11,7 @@
 | Dikirim pada | 	21-Mar-2024 14:19:16 |
 | Submission | [Submission: Membangun Notes App](https://www.dicoding.com/academies/315/tutorials/16849) |
 | Tipe | Token: SIB Cycle 6 Cohort - FEBE |
+| Stars | ![start](src/assets/stars.png) |
 
 Anda telah belajar hal-hal berikut.
 
