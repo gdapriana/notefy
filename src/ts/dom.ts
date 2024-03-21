@@ -1,4 +1,5 @@
 import { NoteProps } from "./types";
+import { archiveNote, deleteNote, unarchiveNote } from "./actions.js";
 
 export const notesAppsComponent = (note: NoteProps): Element => {
   const card = document.createElement("article");
@@ -28,6 +29,69 @@ export const notesAppsComponent = (note: NoteProps): Element => {
   note.archived
     ? actionSection.append(unarchiveBtn, deleteBtn)
     : actionSection.append(archiveBtn, deleteBtn);
+
+  deleteBtn.addEventListener("click", () => {
+    dialogModal({type: "delete", note: note, title: "Delete note"})
+  })
+  archiveBtn.addEventListener("click", () => {
+    dialogModal({type: "archive", note: note, title: "Archive note"})
+  })
+  unarchiveBtn.addEventListener("click", () => {
+    dialogModal({type: "unarchive", note: note, title: "Unarchive note"})
+  })
+
   card.append(title, created, body, actionSection);
   return card;
 };
+
+export const dialogModal = ({type, note, message, title}: {type: "archive" | "unarchive" | "delete" | "message"; note?: NoteProps; message?:string; title?: string}): boolean | string | void => {
+  const dialogRoot = document.querySelector("#dialog")
+  const dialogTitle: Element | null = document.querySelector("#dialog-title")
+  const dialogDesc: Element | null = document.querySelector("#dialog-description")
+  const dialogAction: Element | null = document.querySelector("#dialog-action-section")
+  const dialogYesBtn: Element | null = document.createElement("button")
+  const dialogOkBtn: Element | null = document.createElement("button")
+  const dialogCancelBtn: Element | null = document.createElement("button")
+
+  dialogYesBtn.classList.add("dialog-yes-btn")
+  dialogOkBtn.classList.add("dialog-ok-btn")
+  dialogCancelBtn.classList.add("dialog-cancel-btn")
+
+  dialogYesBtn.innerHTML = "Yes"
+  dialogOkBtn.innerHTML = "Ok"
+  dialogCancelBtn.innerHTML = "Cancel"
+
+  if (dialogTitle !== null) dialogTitle.innerHTML = title as string
+  if (dialogDesc !== null) dialogDesc.innerHTML = (type === "message" ? message : `Are you sure to ${type} ${note?.title}?`) as string
+  if (dialogAction !== null) {
+    dialogAction.innerHTML = ""
+    if (type === "message") dialogAction.append(dialogOkBtn)
+    else dialogCancelBtn && dialogYesBtn && dialogAction.append(dialogCancelBtn, dialogYesBtn)
+  }
+
+  if (dialogRoot !== null) {
+    dialogRoot.classList.add("show-dialog")
+    dialogRoot.classList.remove("hide-dialog")
+  }
+
+  dialogYesBtn.addEventListener("click", () => {
+    if (type === "delete" && note) deleteNote(note.id)
+    if (type === "archive" && note) archiveNote(note.id)
+    if (type === "unarchive" && note) unarchiveNote(note.id)
+
+    if (dialogRoot !== null) dialogRoot.classList.add("hide-dialog")
+    if (dialogRoot !== null) dialogRoot.classList.remove("show-dialog")
+    return true
+  })
+
+  dialogCancelBtn.addEventListener("click", () => {
+    if (dialogRoot !== null) dialogRoot.classList.add("hide-dialog")
+    if (dialogRoot !== null) dialogRoot.classList.remove("show-dialog")
+    return false
+  })
+
+  dialogOkBtn.addEventListener("click", () => {
+    if (dialogRoot !== null) dialogRoot.classList.add("hide-dialog")
+    if (dialogRoot !== null) dialogRoot.classList.remove("show-dialog")
+  })
+}

@@ -1,0 +1,54 @@
+@use "variables" as var
+
+#dialog.dialog
+  position: absolute
+  z-index: 999
+  width: 100%
+  height: 100vh
+  justify-content: center
+  align-items: center
+  background-color: rgba(0, 0, 0, 0.8)
+
+  #dialog-box.dialog-box
+    padding: 20px
+    border-radius: 10px
+    background-color: var.$white
+    display: flex
+    flex-direction: column
+    justify-content: start
+    align-items: stretch
+
+    #dialog-title.dialog-title
+      color: var.$black
+
+    #dialog-description.dialog-description
+      color: var.$gray
+      margin-bottom: 10px
+
+    #dialog-action-section.dialog-action-section
+      margin-top: 8px
+      display: flex
+      justify-content: end
+      align-items: center
+      gap: 4px
+
+      button
+        border: none
+        padding: 8px 12px
+        color: var.$white
+        border-radius: 5px
+        cursor: pointer
+        &:hover
+          opacity: 70%
+
+      button.dialog-yes-btn
+        background-color: var.$rose500
+
+      button.dialog-cancel-btn, button.dialog-ok-btn
+        background-color: var.$indigo500
+
+.hide-dialog
+  display: none
+
+.show-dialog
+  display: flex

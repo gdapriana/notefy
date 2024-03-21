@@ -17,11 +17,25 @@
     <link rel="stylesheet" href="./src/styles/form.css" />
     <link rel="stylesheet" href="./src/styles/notes-section.css" />
     <link rel="stylesheet" href="./src/styles/search.css" />
+    <link rel="stylesheet" href="./src/styles/dialog.css" />
 
     <!-- JS -->
     <script type="module" src="./src/js/main.js"></script>
   </head>
   <body>
+    <div id="dialog" class="dialog hide-dialog">
+      <div id="dialog-box" class="dialog-box">
+        <h2 id="dialog-title" class="dialog-title">Delete Note</h2>
+        <p id="dialog-description" class="dialog-description">
+          Are you sure to delete [title] note?
+        </p>
+        <div id="dialog-action-section" class="dialog-action-section">
+          <button class="dialog-cancel-btn">Cancel</button>
+          <button class="dialog-yes-btn">Yes</button>
+          <button class="dialog-ok-btn">Ok</button>
+        </div>
+      </div>
+    </div>
     <div id="root">
       <header id="header">
         <div id="header-wrapper">
