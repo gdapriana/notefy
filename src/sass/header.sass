@@ -1,0 +1,33 @@
+@use "variables" as var
+@use "mixin" as mix
+
+#header
+  grid-area: header
+  border-bottom: var.$border 1px solid
+  @include mix.makeItCenterWithFlex
+  overflow: hidden
+
+  #header-wrapper
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    max-width: var.$lg
+    padding: 12px
+
+    #nav-brand
+      @include mix.makeItCenterWithFlex
+      gap: 4px
+
+      .title
+        font-size: 1.6rem
+        color: var.$indigo500
+        background-color: white
+        z-index: 5
+
+      .tagline
+        font-size: 1rem
+        font-weight: 600
+        z-index: 2
+
+
