@@ -1,2 +1,96 @@
+@use "mixin" as mix
+@use "variables" as var
+
 #main
   grid-area: main
+  display: flex
+  flex-direction: column
+  justify-content: start
+  align-items: center
+
+  #main-wrapper
+    max-width: var.$lg
+    width: 100%
+    flex-basis: 0
+    flex-grow: 1
+    overflow: auto
+    @media (min-width: var.$md)
+      display: flex
+      flex-direction: row
+      align-items: stretch
+      justify-content: center
+
+    #input-wrapper
+      @media (min-width: var.$md)
+        height: 100%
+        overflow: auto
+        display: flex
+        justify-content: center
+        align-items: center
+        border-right: 1px solid var.$border
+
+    #output-wrapper
+      @media (min-width: var.$md)
+        flex-grow: 1
+        overflow: auto
+        display: flex
+        flex-direction: column
+        justify-content: start
+        align-items: stretch
+
+      #output-archive-section, #output-unarchive-section
+        padding: 20px
+        display: flex
+        flex-direction: column
+        justify-content: start
+        align-items: stretch
+        gap: 20px
+        border-bottom: 1px solid var.$border
+
+        .section-header
+          display: flex
+          flex-direction: column
+          gap: 8px
+          overflow: hidden
+
+          h2
+            font-size: 1.4rem
+            color: var.$indigo500
+            display: flex
+            justify-content: start
+            gap: 4px
+            align-items: center
+            overflow: hidden
+
+            span
+              z-index: 5
+
+            img
+              width: 24px
+              height: 24px
+              background-color: white
+              z-index: 10
+
+          p
+            font-size: 1rem
+            color: var.$gray
+
+        #output-archive-section-wrapper, #output-unarchive-section-wrapper
+          display: grid
+          grid-template-columns: repeat(auto-fill, minmax(200px, 220px))
+          gap: 12px
+
+          .note-card
+            padding: 12px
+            border-radius: 10px
+
+
+        #output-unarchive-section-wrapper
+          .note-card
+            background-color: var.$indigo50
+            border: 1px solid var.$indigo100
+
+        #output-archive-section-wrapper
+          .note-card
+            background-color: var.$rose50
+            border: 1px solid var.$rose100

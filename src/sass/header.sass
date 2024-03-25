@@ -5,7 +5,6 @@
   grid-area: header
   border-bottom: var.$border 1px solid
   @include mix.makeItCenterWithFlex
-  overflow: hidden
 
   #header-wrapper
     width: 100%
@@ -14,6 +13,8 @@
     justify-content: space-between
     max-width: var.$lg
     padding: 12px
+    gap: 12px
+    flex-wrap: wrap
 
     #nav-brand
       @include mix.makeItCenterWithFlex
@@ -29,5 +30,81 @@
         font-size: 1rem
         font-weight: 600
         z-index: 2
+        display: none
+        @media (min-width: var.$md)
+          display: inline-block
+
+    #search-note
+      @include mix.makeItCenterWithFlex
+      background-color: var.$indigo50
+      position: relative
+      border-radius: 10px
+      padding: 12px
+      gap: 8px
+
+      .icon
+        width: 16px
+
+      .search-input
+        border: none
+        background-color: transparent
+
+        &:focus
+          outline: none
+
+      #search-suggestions
+        z-index: 9999
+        position: absolute
+        top: 50px
+        background-color: white
+        width: 100%
+        border-radius: 10px
+        max-height: 200px
+        overflow: auto
+        left: 0
+        flex-direction: column
+        justify-content: start
+        align-items: stretch
+        gap: 8px
+        border: 1px solid var.$border
 
 
+        .search-suggestion-card
+          display: flex
+          flex-direction: column
+          justify-content: start
+          gap: 4px
+          align-items: stretch
+          border-bottom: 1px solid var.$border
+          padding: 12px
+
+
+          .suggestion-title
+            color: var.$indigo500
+
+
+          .suggestion-body
+            color: var.$gray
+            font-size: .8rem
+
+          .suggestion-actions
+            display: flex
+            justify-content: end
+            align-items: center
+            gap: 4px
+            margin-top: 4px
+
+            button
+              padding: 4px 6px
+              border: none
+              background-color: var.$indigo50
+              border-radius: 8px
+              color: var.$indigo500
+              &:hover
+                cursor: pointer
+
+      #search-suggestions.hidden
+        display: none
+
+      #search-suggestions.show
+        display: flex

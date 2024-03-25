@@ -1,0 +1,52 @@
+@use "mixin" as mix
+@use "variables" as var
+
+#create-form
+  display: flex
+  width: 100%
+  flex-direction: column
+  justify-content: start
+  align-items: stretch
+  padding: 16px
+  gap: 12px
+  @media (min-width: var.$md)
+    width: 280px
+
+  header
+    @include mix.makeItCenterWithFlex
+    color: var.$indigo500
+
+  label
+    display: flex
+    flex-direction: column
+    gap: 8px
+
+    span
+      font-size: 1rem
+      font-weight: 500
+      color: var.$gray
+
+    input, textarea
+      padding: 12px
+      border: none
+      background-color: var.$indigo50
+      border-radius: 10px
+      &:focus
+        outline: none
+        color: var.$gray
+
+    .validation-message
+      color: var.$rose500
+      font-size: .8rem
+
+  button
+    color: var.$white
+    padding: 10px 12px
+    border-radius: 10px
+    border: none
+    margin-top: 20px
+    transition: all ease-in-out .3s
+    background-color: var.$indigo500
+    &:hover
+      background-color: var.$indigo400
+      cursor: pointer

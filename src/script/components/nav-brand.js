@@ -19,7 +19,7 @@ class AppBrand extends HTMLElement {
       easing: "easeInOutExpo",
       elasticity: 800,
       opacity: [0, 1],
-      translateY: [50, 0],
+      translateY: [-50, 0],
       duration: 1500,
     });
 

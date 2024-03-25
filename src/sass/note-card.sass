@@ -1,0 +1,59 @@
+@use "variables" as var
+
+.note-card
+  display: flex
+  justify-content: start
+  flex-direction: column
+  align-items: stretch
+  height: 200px
+  gap: 4px
+
+  h1.note-title
+    font-size: 1.1rem
+    color: var.$indigo500
+
+  span.note-created
+    font-size: .8rem
+    color: var.$gray
+
+  p.note-body
+    overflow: auto
+    flex-basis: 0
+    flex-grow: 1
+    color: var.$gray
+
+  div.note-action-wrapper
+    display: flex
+    justify-content: end
+    gap: 8px
+    align-items: center
+
+    button.note-delete-btn, button.note-archive-btn, button.note-unarchive-btn
+      padding: 4px 8px
+      border-radius: 4px
+      border: none
+      color: var.$white
+      display: flex
+      justify-content: center
+      align-items: center
+      gap: 2px
+      transition: all ease-in-out .3s
+      &:hover
+        cursor: pointer
+        opacity: .8
+
+      img.icon
+        width: 12px
+        height: 12px
+
+
+    button.note-delete-btn
+      background-color: var.$rose500
+
+    button.note-archive-btn, button.note-unarchive-btn
+      background-color: var.$indigo500
+
+#output-archive-section-wrapper
+  .note-card
+    h1.note-title
+      color: var.$rose500

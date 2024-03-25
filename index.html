@@ -10,13 +10,76 @@
     <title>notefy with api</title>
   </head>
   <body id="root">
+  <div id="loading" class="hidden">Loading...</div>
     <header id="header" data-aos="fade-in">
       <div id="header-wrapper">
         <nav-brand></nav-brand>
+        <div class="search-note" id="search-note">
+          <img class="icon" src="search.svg" alt="search" >
+          <label for="search-input"></label>
+          <input class="search-input" id="search-input" placeholder="Search note..." type="text">
+          <div id="search-suggestions" class="hidden"></div>
+        </div>
       </div>
     </header>
-    <main id="main">main</main>
-    <footer id="footer">footer</footer>
+    <main id="main">
+      <div id="main-wrapper">
+        <div id="input-wrapper">
+          <form id="create-form">
+            <header>
+              <h3>Create Note</h3>
+            </header>
+            <label for="title">
+              <span>Title</span>
+              <input type="text" minlength="3" aria-describedby="title-validation" placeholder="Go to market..." required id="title" name="title">
+              <span
+                id="title-validation"
+                aria-live="assertive"
+                class="validation-message"
+              ></span>
 
+            </label>
+            <label for="body">
+              <span>Body</span>
+              <textarea name="body" id="body" rows="10" placeholder="1. Fruit ..."></textarea>
+            </label>
+            <button type="submit">Create</button>
+          </form>
+        </div>
+        <div id="output-wrapper">
+          <div id="output-unarchive-section">
+            <section-header title="Notes" description="List of all your notes" imageUrl="note.svg"></section-header>
+            <div id="output-unarchive-section-wrapper">
+              <div class="note-card">
+                <h1 class="note-title">Note Title</h1>
+                <span class="note-created">Created at</span>
+                <p class="note-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, nam?</p>
+                <div class="note-action-wrapper">
+                  <button class="note-archive-btn">Archive</button>
+                  <button class="note-delete-btn">Delete</button>
+                  <button class="note-unarchive-btn">Unarchive</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="output-archive-section">
+            <section-header title="Archived Notes" description="List of all your archived notes" imageUrl="archive.png"></section-header>
+            <div id="output-archive-section-wrapper">
+              <div class="note-card">
+                <h1 class="note-title">Note Title</h1>
+                <span class="note-created">Created at</span>
+                <p class="note-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, nam?</p>
+                <div class="note-action-wrapper">
+                  <button class="note-archive-btn">Archive</button>
+                  <button class="note-delete-btn">Delete</button>
+                  <button class="note-unarchive-btn">Unarchive</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer">footer</footer>
   </body>
 </html>
