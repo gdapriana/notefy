@@ -1,6 +1,8 @@
 @use "variables" as var
+@use "mixin" as mix
 
 #footer
   border-top: var.$border 1px solid
   grid-area: footer
-
+  @include mix.makeItCenterWithFlex
+  padding: 8px
