@@ -1,34 +1,17 @@
-## Submission: Membangun Notes App
+# Menjadi Front-End Web Developer Expert
 
-![example](src/assets/example.png)
+Website tidak hanya berguna sebagai media informasi. Semakin canggih website, semakin rumit juga ruang lingkup alias kegunaaan dan proses pengembangannya. Untunglah saat ini juga banyak sekali tools yang memudahkan kita dalam mengembangkan website 
 
+Spesifik mengenai ruang lingkup, terdapat 2 (dua)  peran penting developer dalam mengembangkan website saat ini, yakni Front-End Web Developer dan Back-End Web Developer. Front-End Web Developer bertanggung jawab langsung terhadap pengguna (end-user) sehingga ia harus membuat website tampak indah dan memiliki experience yang baik pengguna. Sedangkan Back-End Web Developer bertanggung jawab untuk mengelola sumber daya (resources) atau data yang dibutuhkan oleh Front-End sebelum tampak di hadapan pengguna.
 
-| Field | Information |
-|---|---|
-| Student Name | I KOMANG GEDE APRIANA (gedeapriana) |
-| Submission ID | 2961493 |
-| Course | [Belajar Fundamental Front-End Web Development](https://www.dicoding.com/academies/163) |
-| Dikirim pada | 	21-Mar-2024 14:19:16 |
-| Submission | [Submission: Membangun Notes App](https://www.dicoding.com/academies/315/tutorials/16849) |
-| Tipe | Token: SIB Cycle 6 Cohort - FEBE |
-| Stars | ![start](src/assets/stars.png) |
+Lazimnya peran tersebut dilakukan oleh individu yang berbeda, namun terkadang terdapat situasi di mana kedua tanggung jawab tersebut dipegang oleh satu orang. Full-Stack Developer adalah sebutan bagi orang yang dalam situasi tersebut.  
 
-Anda telah belajar hal-hal berikut.
+Pada intinya kedua peran tersebut saling membutuhkan satu sama lain. Kita tentu membutuhkan Back-End jika kita ingin membuat website yang kompleks. Website juga akan terlihat mengerikan jika sisi Front-End tidak kita perhatikan.
 
-- Membangun formulir dengan baik dan benar.
-- Penyusunan layouting dengan CSS Grid Layout.
-- Membangun komponen UI dengan Web Component.
+Selamat bergabung di kelas Belajar Fundamental Front-End Web Development. Kelas ini merupakan lanjutan dari kelas [Belajar Dasar Pemrograman Web](https://dicoding.com/academies/123) yang fokus pada pengembangan website dari sisi Front-End.
 
-Semua modul ini menjadi kebutuhan kita dalam menjadi front-end web developer yang andal. Tidak serta merta Anda dinyatakan lulus atau paham seluruh materi di atas. Untuk mengujinya, kami akan melakukan asesmen dengan memberikan tugas kepada Anda untuk membangun aplikasi web. Nantinya, reviewer kami akan memeriksa pekerjaan Anda dan memberikan hasil reviu pada proyek yang dibuat.
+| **Proyek** | **Link** |
+| --- | --- |
+| Proyek Pertama, Membangun Notes App | Akses [disini](https://gitlab.com/dicoding-workspaces/submissions/notefy/-/tree/proyek-awal?ref_type=heads) |
+| Proyek Kedua, Integrasi Notes App dengan RESTful API | Akses [disini](https://gitlab.com/dicoding-workspaces/submissions/notefy/-/tree/proyek-akhir?ref_type=heads) |
 
-## Kriteria
-- [x] Menampilkan Daftar Catatan dengan Baik
-- [x] Formulir Tambah Catatan
-- [x] CSS Grid sebagai Metode Layouting
-- [x] Bangun Komponen UI dengan Web Component
-
-## Kriteria Opsional
-- [x] memiliki tampilan yang menarik.
-- [x] menerapkan realtime validation pada formulir.
-- [x] menerapkan custom attribute pada custom element.
-- [x] memiliki tampilan yang responsive.
